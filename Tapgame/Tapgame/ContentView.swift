@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+struct TapButton: View {
+    var body: some View {
+        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Text("Hallo")
+                .padding()
+                .foregroundColor(.white)
+                .background(Color(.blue))
+                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+        })
+    }
+}
+
 struct ContentView: View {
     var body: some View {
         
@@ -19,7 +31,15 @@ struct ContentView: View {
             {
                 Text("The Tap Game")
                     .padding(.top, 40)
+                
+                
+                
+                TapButton()
+                
+                
+                
                 Spacer()
+                
             }
         }
         

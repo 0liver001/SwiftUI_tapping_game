@@ -10,26 +10,15 @@ import SwiftUI
 struct TapNumber : View {
     var body: some View {
         Text("0")
+            
             .scaleEffect(5)
     }
 }
 
-struct TapButtonGUI {
-    var body: some View {
-        Text("Hallo")
-            .padding()
-            .foregroundColor(.white)
-            .background(Color(.blue))
-            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-            .offset(x:0, y:0)
-    }
-}
-
 struct TapButton: View {
-    //let myGUI : TapButtonGUI
     var body: some View {
         Button(action: {
-            self.offset(x:-100)
+            // Hier sollte er eigentlich zählen und sich repositionieren
         }, label: {
             Text("Hallo")
                 .padding()
@@ -42,7 +31,6 @@ struct TapButton: View {
 }
 
 extension View {
-    //let tb : TapButtonGUI
     
     func replace() -> some View {
         // self.modifier(offset(x:-100))
@@ -52,6 +40,8 @@ extension View {
 }
 
 struct ContentView: View {
+    @State var counter = 0
+    
     var body: some View {
         
         
@@ -67,13 +57,6 @@ struct ContentView: View {
                     .bold()
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .padding(.top, 40)
-                    
-                
-                
-                
-                
-                
-                
                 
                 Spacer()
                 TapButton()

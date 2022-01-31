@@ -9,23 +9,27 @@ import SwiftUI
 
 struct TapNumber : View {
     var body: some View {
-        Text("0")
-            
+        Text("0")// <-- Der sollte eigentlich zählen wie oft der Button gedrückt wurde:/
             .scaleEffect(5)
+            .foregroundColor(Color(#colorLiteral(red: 0.5385078192, green: 0.8231666088, blue: 0.8190583587, alpha: 1)))
     }
 }
 
 struct TapButton: View {
+    
     var body: some View {
         Button(action: {
             // Hier sollte er eigentlich zählen und sich repositionieren
+            self.body.offset(
+                x: CGFloat(Int.random(in: 1..<500) - 250),
+                y: CGFloat(Int.random(in: 1..<500) - 250)
+            )
         }, label: {
             Text("Hallo")
                 .padding()
                 .foregroundColor(.white)
                 .background(Color(.blue))
                 .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                //.offset(x:0, y:0)
         })
     }
 }
@@ -66,6 +70,11 @@ struct ContentView: View {
         }
         
     }
+    
+    func count() -> Void {
+        
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
